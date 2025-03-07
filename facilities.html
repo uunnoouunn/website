@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هول إن ون | المرافق والخدمات</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            background: #090909;
+            overflow-x: hidden;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(20, 20, 20, 0.9);
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+        .logo img {
+            height: 60px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            transition: 0.3s ease-in-out;
+        }
+        nav ul li a:hover {
+            color: #7ed957;
+        }
+        .content {
+            padding: 50px;
+            text-align: center;
+        }
+        .content h1 {
+            color: #7ed957;
+            font-size: 2.5em;
+        }
+        .service-item {
+            margin: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+        .service-item:hover {
+            background: #7ed957;
+            color: black;
+            transform: scale(1.05);
+        }
+        .service-item img {
+            width: 50%;
+            border-radius: 10px;
+        }
+        .service-item h2 {
+            margin-top: 10px;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+        .service-item p {
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(20, 20, 20, 0.9);
+            font-size: 0.9em;
+            color: #aaa;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 20;
+        }
+        .popup-content {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            width: 70%;
+            text-align: center;
+        }
+        .popup img {
+            width: 50%;
+            border-radius: 10px;
+        }
+        .close-popup {
+            background: #ff0000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+        .close-popup:hover {
+            background: #ff6666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="C:\Users\مستخدم\Desktop\hole in one\pics\hole-removebg-preview.png" alt="هول إن ون Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">عن المنتجع</a></li>
+                <li><a href="#">المرافق والخدمات</a></li>
+                <li><a href="packages.html">الباقات والعروض</a></li>
+                <li><a href="booknow.html">احجز الآن</a></li>
+                <li><a href="contactus.html">اتصل بنا</a></li>
+                <li><a href="accessibility.html">إمكانية الوصول</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content">
+        <h1>المرافق والخدمات</h1>
+
+        <div class="service-item" onclick="openPopup('accommodation')">
+            <img src="C:\Users\مستخدم\Desktop\hole in one\pics\1.jpg" alt="الإقامة">
+            <h2>الإقامة في الفنادق</h2>
+            <p>أنواع الغرف: غرف قياسية، أجنحة فاخرة، غرف عائلية، فيلات خاصة.</p>
+            <p>مزايا: إطلالات رائعة، خدمة الغرف على مدار الساعة، الإنترنت عالي السرعة.</p>
+            <p>الأسعار: تبدأ من 100 يورو لليلة.</p>
+        </div>
+
+        <div class="service-item" onclick="openPopup('restaurants')">
+            <img src="path/to/restaurants.jpg" alt="المطاعم">
+            <h2>المطاعم والمقاهي</h2>
+            <p>مطعم رئيسي يقدم مأكولات عالمية، مطاعم متخصصة يابانية وبحرية، مقهى عصري.</p>
+            <p>العروض الخاصة: خصومات للأعضاء على الأطعمة والمشروبات.</p>
+        </div>
+
+        <div class="service-item" onclick="openPopup('proshop')">
+            <img src="path/to/proshop.jpg" alt="متجر المحترفين">
+            <h2>متجر المحترفين</h2>
+            <p>منتجات: معدات جولف احترافية، ملابس رياضية، إكسسوارات.</p>
+            <p>العلامات التجارية: تومي هيلفيغر، بيما، تايتليست.</p>
+            <p>العروض: خصومات في المواسم الخاصة.</p>
+        </div>
+
+        <div class="service-item" onclick="openPopup('activities')">
+            <img src="path/to/activities.jpg" alt="الأنشطة الأخرى">
+            <h2>الأنشطة الأخرى</h2>
+            <p>النادي الصحي: صالة رياضية، ساونا، حمام سباحة داخلي.</p>
+            <p>الجولات السياحية: جولات اكتشاف المناظر الطبيعية.</p>
+            <p>دروس تدريبية: دروس جولف للمبتدئين والمحترفين.</p>
+        </div>
+
+        <div class="popup" id="popup">
+            <div class="popup-content" id="popup-content">
+                <button class="close-popup" onclick="closePopup()">إغلاق</button>
+                <div id="popup-details"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 هول إن ون - جميع الحقوق محفوظة.
+    </footer>
+
+    <script>
+        function openPopup(type) {
+            const details = {
+                accommodation: "<h2>تفاصيل الإقامة</h2><p>أنواع الغرف تشمل غرف قياسية، أجنحة فاخرة، غرف عائلية، فيلات خاصة. الأسعار تبدأ من 100 يورو لليلة. جميع الغرف تتمتع بإطلالات رائعة على ملعب الجولف.</p><img src='path/to/accommodation-details.jpg' alt='الإقامة'>",
+                restaurants: "<h2>تفاصيل المطاعم</h2><p>مطعم رئيسي يقدم مأكولات عالمية بالإضافة إلى مطاعم يابانية وبحرية. بالإضافة إلى مقهى عصري يقدم مشروبات متنوعة.</p><img src='path/to/restaurant-details.jpg' alt='المطاعم'>",
+                proshop: "<h2>تفاصيل متجر المحترفين</h2><p>المنتجات تشمل معدات جولف احترافية، ملابس رياضية، إكسسوارات. العلامات التجارية تشمل تومي هيلفيغر وبيما وتايتليست. العروض متوفرة في المواسم الخاصة.</p><img src='path/to/proshop-details.jpg' alt='متجر المحترفين'>",
+                activities: "<h2>تفاصيل الأنشطة</h2><p>النادي الصحي يقدم صالة رياضية، ساونا، وحمام سباحة داخلي. بالإضافة إلى الجولات السياحية ودروس تدريبية للجولف للمبتدئين والمحترفين.</p><img src='path/to/activities-details.jpg' alt='الأنشطة'>"
+            };
+            document.getElementById('popup-details').innerHTML = details[type];
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
